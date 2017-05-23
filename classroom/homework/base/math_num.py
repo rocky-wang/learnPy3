@@ -35,13 +35,18 @@ def isprimer_num(arg_num):              # 判断一个数字是否是素数
     return True
 
 
-def check_input():
+def check_pfct():
     snu = input("please input number")
-    nu = int(snu)
+    try:
+        nu = int(snu)
+    except ValueError as err:
+        print("input type error: {}".format(err))
+        return False
+
     if ispfct_num(nu):
-        print("the number {} is perfect number".format(nu))
+        print("the number:{} is perfect number".format(nu))
     else:
-        print("the number {} not a perfect number".format(nu))
+        print("the number:{} not perfect number".format(nu))
 
 
 if __name__ == "__main__":
@@ -55,10 +60,14 @@ if __name__ == "__main__":
 
     print("1-200的素数有：")
     for pr in arrPrimers:
-        print("{} ".format(pr), end="")
+            # print pr, ' ',
+            print("{} ".format(pr), end="")
 
     print("\n1-200的完数有：")
     for pf in arrPfcts:
-        print("{} ".format(pf), end="")
+            # print pr, ' ',
+            print("{} ".format(pf), end="")
     print("")
+
+    check_pfct()
 

@@ -1,7 +1,7 @@
 # ^_^ coding: utf-8
+
+
 # 统计特殊字符的次数函数statistic
-
-
 def statistic_str(str_mes):
     result = {"letters": 0, "spaces": 0, "numbers": 0, "others": 0}
     for mes in str_mes:
